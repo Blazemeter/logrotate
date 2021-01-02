@@ -17,7 +17,7 @@ pipeline
 
     parameters {
         booleanParam(name: 'PERFORM_PRISMA_SCAN', defaultValue: true, description: 'Perform a Prisma scan for the local image')
-        booleanParam(name: 'PERFORM_PRISMA_SCAN', defaultValue: false, description: 'Perform a Prisma scan for the local image')
+        booleanParam(name: 'TEST_JENKINS_BUILD', defaultValue: false, description: 'Perform a test for build')
         booleanParam(name: 'FAIL_JOB_ON_SCAN_FAILURES', defaultValue: false, description: 'If checked, Twistlock vulnerabilities scan will enforce job failure.', )
     }
 
