@@ -5,8 +5,8 @@ LABEL MAINTAINER="Blazemeter devops team"
 # logrotate version (e.g. 3.9.1-r0)
 ARG LOGROTATE_VERSION=latest
 # permissions
-ARG CONTAINER_UID=1000
-ARG CONTAINER_GID=1000
+#ARG CONTAINER_UID=1000
+#ARG CONTAINER_GID=1000
 
 # install dev tools
 RUN export CONTAINER_USER=logrotate && \
