@@ -18,6 +18,7 @@ RUN export CONTAINER_USER=logrotate && \
       gzip \
       tini \
       wget \
+      bash \
       tzdata && \
     if  [ "${LOGROTATE_VERSION}" = "latest" ]; \
       then apk add logrotate ; \
