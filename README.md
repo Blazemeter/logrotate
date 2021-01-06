@@ -343,9 +343,14 @@ $ docker run -d \
 
 ## Setting MaxAge and minsize
 
-Maxage and minsize for logs can be configured with the environment variables `LOGROTATE_MAXAGE` and `LOGROTATE_MINSIZE`.
+Maxage , maxsize and minsize for logs can be configured with the environment variables `LOGROTATE_MAXAGE` `LOGROTATE_MAXSIZE` and `LOGROTATE_MINSIZE`.
 
 * Maxage: `Remove  rotated  logs  older  than <count> days. The age is only checked if the logfile is to be rotated.`
+
+* Maxsize: `Log files are rotated when they grow bigger than size bytes even before  the additionally specified time interval (daily, weekly, monthly, or yearly).
+The related size option is  similar  except  that  it is mutually exclusive with the time interval options, and it causes
+log files to be rotated without regard for the last rotation time. When maxsize is used, both the size and timestamp of a log file are considered.`
+
 * Minsize: `Log files are rotated when they grow bigger than size bytes, but not before the  additionally  specified  time  interval  (daily, weekly, monthly, or yearly).  The related size option is similar except that it is mutually  exclusive  with  the  time  interval options,  and  it  causes log files to be rotated without regard for the last rotation time.  When minsize is used, both the size and timestamp of a log file are considered.`
 
 > [Source](http://manpages.ubuntu.com/manpages/yakkety/man8/logrotate.8.html)

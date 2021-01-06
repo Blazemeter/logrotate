@@ -13,10 +13,11 @@ function createLogrotateConfigurationEntry() {
   local conf_logrotate_interval="$8"
   local conf_logrotate_size="$9"
   local conf_dateformat="${10}"
-  local conf_minsize="${11}"
-  local conf_maxage="${12}"
-  local conf_prerotate="${13}"
-  local conf_postrotate="${14}"
+  local conf_maxsize="${11}"
+  local conf_minsize="${12}"
+  local conf_maxage="${13}"
+  local conf_prerotate="${14}"
+  local conf_postrotate="${15}"
   local new_log=
   new_log=${file}" {"
   if [ "$file_user" != "UNKNOWN" ] && [ "$file_owner" != "UNKNOWN" ]; then
@@ -38,6 +39,9 @@ function createLogrotateConfigurationEntry() {
   fi
   if [ -n "${conf_logrotate_size}" ]; then
     new_log=${new_log}"\n  ${conf_logrotate_size}"
+  fi
+  if [ -n "${conf_maxsize}" ]; then
+    new_log=${new_log}"\n  ${conf_maxsize}"
   fi
   if [ -n "${conf_minsize}" ]; then
     new_log=${new_log}"\n  ${conf_minsize}"

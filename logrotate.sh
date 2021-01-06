@@ -78,6 +78,14 @@ function resolveLogrotateSize() {
 
 logrotate_minsize=""
 
+function resolveMaxSize() {
+  if [ -n "${LOGROTATE_MAXSIZE}" ]; then
+    logrotate_maxsize="maxsize "${LOGROTATE_MAXSIZE}
+  fi
+}
+
+logrotate_maxsize=""
+
 function resolveMinSize() {
   if [ -n "${LOGROTATE_MINSIZE}" ]; then
     logrotate_minsize="minsize ${LOGROTATE_MINSIZE}"
@@ -112,5 +120,6 @@ resolveLogrotateMode
 resolveLogfileCompression
 resolveLogrotateSize
 resolveLogrotateAutoupdate
+resolveMaxSize
 resolveMinSize
 resolveMaxAge
